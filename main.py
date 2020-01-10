@@ -193,7 +193,7 @@ def main():
         for event in pygame.event.get():
             if (event.type == QUIT
                 or event.type == KEYDOWN 
-                and event.key == K_ESCAPE):
+                and event.key == K_q):
                 return 
             elif (event.type == KEYDOWN 
                 and event.key in direction.keys()):
@@ -208,7 +208,7 @@ def main():
                 newMissile = ship.fire() 
                 newMissile.add(missiles, allsprites)
             elif (event.type == KEYDOWN
-                and event.key == K_b):
+                and event.key == K_s):
                 newBomb = ship.bomb() 
                 newBomb.add(bombs, alldrawings)
 
