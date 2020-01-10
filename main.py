@@ -135,21 +135,21 @@ class Alien(pygame.sprite.Sprite):
 
 class Siney(Alien):
     def __init__(self):
-        Alien.__init__(self, 'green')
+        Alien.__init__(self, 'blue')
         self.amp = random.randint(self.rect.width, self.area.width//2)
         self.freq = 1/20
         self.moveFunc = lambda: (self.amp*math.sin(self.loc*self.freq), 0)
 
 class Roundy(Alien):
     def __init__(self):
-        Alien.__init__(self, 'red')
+        Alien.__init__(self, 'orange')
         self.amp = random.randint(self.rect.width, 3*self.rect.width)
         self.freq = 1/20
         self.moveFunc = lambda: (self.amp*math.sin(self.loc*self.freq), self.amp*math.cos(self.loc*self.freq))
 
 class Spikey(Alien):
     def __init__(self):
-        Alien.__init__(self, 'blue')
+        Alien.__init__(self, 'white')
         self.slope = random.choice(list(x for x in range(-3,3) if x != 0))
         self.period = random.choice(list(4*x for x in range(3,31)))
         self.moveFunc = lambda: (self.slope*(self.loc % self.period) if self.loc % self.period < self.period // 2 else self.slope*self.period // 2 - self.slope*((self.loc % self.period) - self.period//2), 0)
